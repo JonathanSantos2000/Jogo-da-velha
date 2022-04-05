@@ -92,6 +92,7 @@ function checkVencedor() {
 
     if (nJogadas == 9) {
         mudarVencedor();
+        mudarCorQuadrado();
     }
 }
 
@@ -106,9 +107,18 @@ function mudarVencedor(quadrado) {
 }
 
 function mudarCorQuadrado(quadrado1, quadrado2, quadrado3) {
-    quadrado1.style.background = '#0f0';
-    quadrado2.style.background = '#0f0';
-    quadrado3.style.background = '#0f0';
+    if (nJogadas == 9) {
+        for (var i = 1; i <= 9; i++) {
+            var quadrado = document.getElementById(i);
+            quadrado.style.background = '#FF0000';
+        }
+    } else {
+        quadrado1.style.background = '#0f0';
+        quadrado2.style.background = '#0f0';
+        quadrado3.style.background = '#0f0';
+    }
+
+
 }
 
 function checkSequencia(quadrado1, quadrado2, quadrado3) {
